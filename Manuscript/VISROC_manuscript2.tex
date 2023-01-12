@@ -1,0 +1,221 @@
+%% This template can be used to write a paper for
+%% Computer Physics Communications using LaTeX.
+%% For authors who want to write a computer program description,
+%% an example Program Summary is included that only has to be
+%% completed and which will give the correct layout in the
+%% preprint and the journal.
+%% The `elsarticle' style is used and more information on this style
+%% can be found at 
+%% http://www.elsevier.com/wps/find/authorsview.authors/elsarticle.
+%%
+%%
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+\usepackage{xcolor}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+%% This list environment is used for the references in the
+%% Program Summary
+%%
+\newcounter{bla}
+\newenvironment{refnummer}{%
+\list{[\arabic{bla}]}%
+{\usecounter{bla}%
+ \setlength{\itemindent}{0pt}%
+ \setlength{\topsep}{0pt}%
+ \setlength{\itemsep}{0pt}%
+ \setlength{\labelsep}{2pt}%
+ \setlength{\listparindent}{0pt}%
+ \settowidth{\labelwidth}{[9]}%
+ \setlength{\leftmargin}{\labelwidth}%
+ \addtolength{\leftmargin}{\labelsep}%
+ \setlength{\rightmargin}{0pt}}}
+ {\endlist}
+
+\journal{Computer Physics Communications}
+
+\begin{document}
+
+\newcommand{\onlinecite}[1]{\hspace{-1 ex} \nocite{#1}\citenum{#1}} 
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{VISROC 2.0: Updated Software for the Visualization of the significance of Receiver Operating Characteristics based on confidence ellipses}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author[a,b]{Stavros-Richard G. Christopoulos\corref{author}}
+\author[c]{George I. Tsagiannis}
+\author[a]{Konstantina A. Papadopoulou}
+\author[b,d]{Nicholas V. Sarlis}
+
+
+\cortext[author] {Corresponding author.\\\textit{E-mail address:}
+ac0966@coventry.ac.uk}
+\address[a]{Faculty of Engineering, Environment, and Computing, Coventry University, Coventry, UK}
+\address[b]{Solid Earth Physics Institute, Physics Department, National and Kapodistrian University of Athens,
+Panepistimiopolis, Zografos 157 84, Athens, Greece}
+\address[c]{UFR SSA (Social Sciences and Administration), Paris Nanterre University, 92001 Nanterre, France}
+\address[d]{Section of Condensed Matter Physics, Physics Department, National and Kapodistrian  University of Athens,
+Panepistimiopolis, Zografos 157 84, Athens, Greece}
+
+\begin{abstract}
+%% Text of abstract
+%New Version Announcements are short descriptions of revisions to programs already in the CPC Program Library. They are not peer reviewed and are intended to facilitate the rapid publication of program revisions that do not merit a full paper description.
+
+%New Version Announcements consist of an Abstract and Program Summary section only. If a long write up is required, please submit as a Computer Programs in Physics (CPiP) article.
+
+%Your manuscript and figure sources should be submitted through Editorial Manager (EM) by using the online submission tool at \\
+%https://www.editorialmanager.com/comphy/.
+
+%In addition to the manuscript you must supply: the program source code; a README file giving the names and a brief description of the files/directory structure that make up the package and clear instructions on the installation and execution of the program; sample input and output data for at least one comprehensive test run; and, where appropriate, a user manual.
+
+%A compressed archive program file or files, containing these items, should be uploaded at the "Attach Files" stage of the EM submission.
+
+%For files larger than 1Gb, if difficulties are encountered during upload the author should contact the Technical Editor at cpc.mendeley@gmail.com.
+
+The Receiver Operating Characteristics (ROC) method is used to evaluate the diagnostic accuracy of binary quantitative tests in a broad spectrum of disciplines, including medicine, physics of complex systems, geophysics, meteorology, etc. The estimation of the significance of the examined prediction method is of high importance and it's usually approximated by Monte Carlo calculations. To simplify this problem, a $FORTRAN$ code called VISROC was submitted to the CPC Program Library in 2014. VISROC evaluates the significance of binary diagnostic and prognostic tools for a family of $k$-ellipses which are based on confidence ellipses and cover the whole ROC space. Since that time, the code has been significantly improved and several new capabilities have been added. Most importantly, a Graphical User Interface (GUI) has been implemented, which can be invoked using either the $R$ shiny web application or the $Python$ application available for Windows, Mac, and Linux operating systems, both of which are described here.
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Receiver Operating Characteristics (ROC) \sep complex systems \sep systems obeying power laws\sep  significance level \sep
+p-value 
+
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+% All New Version Announcements must contain the following
+% PROGRAM SUMMARY.
+
+{\bf NEW VERSION PROGRAM SUMMARY}
+  %Delete as appropriate.
+
+\begin{small}
+\noindent
+{\em Program Title:}     VISROC 2.0                                       \\
+{\em CPC Library link to program files:} (to be added by Technical Editor) \\
+{\em Developer's repository link:} (if available) \\
+{\em Code Ocean capsule:} (to be added by Technical Editor)\\
+{\em Licensing provisions(please choose one):} none  \\
+{\em Programming language:}   $R$ and $Python$                                 \\
+{\em Supplementary material:}                                 \\
+  % Fill in if necessary, otherwise leave out.
+{\em Journal reference of previous version:}  N.V. Sarlis, S.-R. G. Christopoulos, Comput. Phys. Commun 185 (2014) 1172.                \\
+{\em Does the new version supersede the previous version?:} Yes   \\
+{\em Reasons for the new version:} Overcome previous version's limitations and implement GUI\\
+{\em Summary of revisions:} $R$ and $Python$ applications, GUI, Ability to input files containing ROC data\\
+{\em Nature of problem(approx. 50-250 words):} The Receiver Operating Characteristics (ROC)[1] is a method used to evaluate the diagnostic ability of binary tests and prediction methods in a broad spectrum of disciplines. Apart from the sensitivity (or True Positive rate, TPr) and specificity (which is complementary to False Positive rate, FPr, i.e., specificity=1-FPr) measures, the estimation of the statistical significance of the examined method is of high importance. VISROC evaluates the significance of binary diagnostic and prognostic tools for a family of $k$-ellipses which are based on confidence ellipses and cover the whole ROC space. \\
+{\em Solution method(approx. 50-250 words):} Using the statistics of random binary predictions for a given value of the predictor threshold $\epsilon_t$, one can construct the corresponding confidence ellipses. The envelope of these confidence ellipses is estimated by varying $\epsilon_t$ in the interval $[0,1]$ and one obtains a new family of ellipses, called $k$-ellipses[2]. They cover the whole ROC space and lead to a well defined Area Under the Curve (AUC). Mason and Graham[3] have shown that AUC follows the Mann-Whitney U-statistics[4] which can be used[5] to estimate the statistical significance of each $k$-ellipse. As the transformation is invertible, any point on the ROC plane corresponds to a unique value of $k$, hence it belongs to a unique $k$-ellipse that allows the estimation of the probability ($p$-value) to obtain this point by chance. The present GUI applications provide the $p$-value on the ROC plane as well as the $k$-ellipses corresponding to the ($p$=)10\%, 5\% and 1\% significance levels using as input the number of the positive (P) and negative (Q) cases to be predicted.\\\\
+%{\em Additional comments including restrictions and unusual features (approx. 50-250 words):}\\
+   \\
+
+\begin{thebibliography}{0}
+\bibitem{1} T. Fawcett, Pattern Recognition Letters 27.8 861-874 (2006)
+1172.
+
+\bibitem{2} N.V. Sarlis, S.-R. G. Christopoulos, Comput. Phys. Commun 185 (2014)
+1172.
+
+\bibitem{3} S.~J. Mason, N.~E. Graham, Quart. J. R. Meteor. Soc. 128 (2002)
+2145.          % This list should only contain those items referenced in the    
+            
+\bibitem{4}H.~B. Mann, D.~R. Whitney, Ann. Math. Statist. 18 (1947) 50.      %
+Program Summary section.   
+
+\bibitem{5}L.~C. Dinneen,  B.~C. Blakesley, J. R. Stat. Soc. Ser. C Appl. Stat.
+22 (1973) 269.        % Type references in text as [1], [2], etc.
+                               % This list is different from the bibliography at
+%the end of 
+                               % the Long Write-Up.
+\end{thebibliography}
+
+\end{small}
+
+
+
+
+\end{document}
+
+%%
+%% End of file 

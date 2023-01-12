@@ -1,0 +1,13 @@
+name: VISROC_2_0
+title: VISROC_2_0
+username:
+account: gtsa
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6544805
+bundleId: 6040415
+url: https://gtsa.shinyapps.io/VISROC_2_0/
+when: 1656090225.47548
+lastSyncTime: 1656090225.47552
+asMultiple: FALSE
+asStatic: FALSE

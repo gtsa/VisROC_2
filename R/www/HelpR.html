@@ -1,0 +1,217 @@
+<html>
+<head>
+<title>Help</title>
+<style>
+body {
+   color: black;
+   line-height: 1.5;
+}
+</style>
+</head><body>
+<hr>
+<h1 id="instructions-to-run-program-visroc2">Instructions to use VISROC 2.0 application</h1>
+<hr>
+
+<h2 id="table-of-contents-a-id-toc-">Table of Contents <a id="toc"></h2>
+<ul>
+<li><a href="#input">Input</a></li>
+<li><a href="#output">Output</a><ul>
+<li><a href="#plots">Plots</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#files">Files</a></li>
+</ul>
+</li>
+<li><a href="#buttons/menus">Buttons / Menus</a><ul>
+<li><a href="#plot">Plot</a></li>
+<li><a href="#save">Save</a></li>
+<li><a href="#view">View</a></li>
+<li><a href="#help">Help</a></li>
+</ul>
+</li>
+<li><a href="#faults">Faults (i-fault codes)</a><ul>
+<li><a href="#fault0">i-fault 0 : No fault</a></li>
+<li><a href="#fault1">i-fault 1 : Non-Critical Fault</a></li>
+<li><a href="#fault2">i-fault 2 : Critical fault</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="input">Input</h2>
+<ul>
+<li><p><strong>P</strong>: number of positive events</p>
+</li>
+<li><p><strong>Q</strong>: number of negative events</p>
+</li>
+<li><p><strong>Resolution</strong>: number of segments in which the interval [0,1] is divided for the calculation of the p-values on a square lattice in the ROC diagram</p>
+</li>
+<li><p><strong>User defined AUC</strong>: value of the Area Under the Curve (AUC) of a ROC diagram,for which you would like to calculate the p-value</p>
+</li>
+<li><p><strong>F<sub>1</sub></strong>: the horizontal coordinate F<sub>1</sub> (depending on the <a href="#view">view mode</a> either the <em>False Alarm Rate</em> or the <em>1-Specificity</em> value or the <em>False Positive Rate</em>) of the point (F<sub>1</sub>, H<sub>1</sub>) on the ROC diagram through which passes the k-ellipse for which you want to calculate the p-value<br><em>Attention: F<sub>1</sub> &lt; H<sub>1</sub></em></p>
+</li>
+<li><p><strong>H<sub>1</sub></strong>: the vertical coordinate H<sub>1</sub> (depending on the <a href="#view">view mode</a> <em>Hit Rate</em> or the <em>Sensitivity</em> or the <em>True Positive Rate</em>) of the point (F<sub>1</sub>, H<sub>1</sub>) on the ROC diagram through which passes the k-ellipse for which you want to calculate the p-value<br><em>Attention: H<sub>1</sub> &gt; F<sub>1</sub></em></p>
+</li>
+<li><p><strong>Data input file</strong>: So as for the data input file to be compatible with VISROC_2.0.exe (regardless of file type), its content should be organised in 2 columns. Otherwise, the calculations and plots of the program will be carried out without taking into account the ROC data entered by the user</p>
+</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<hr>
+<h2 id="output">Output</h2>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<h3 id="plots">Plots</h3>
+<ul><li><h4 id="roc-curve">ROC curve:</h4></li>
+<ul>
+<li><p>&nbsp;&nbsp;Three k-ellipses respectively with 1%, 5% and 10% p-value</p>
+</li>
+<li><p>&nbsp;&nbsp;The curve of the ROC data entered by the user</p>
+</li>
+</li>
+</ul>
+<li>
+<h4 id="f1-h1">Plot (F<sub>1</sub>, H<sub>1</sub>):</h4>
+<ul>
+<li><p>Three k-ellipses respectively with 1%, 5% and 10% p-value</p>
+</li>
+<li><p>The k-ellipse passing from the point (F<sub>1</sub>, H<sub>1</sub>), i.e. with coordinates respectively equal with False Positive Rate (False Alarm Rate or 1-Specificity value) and True Positive Rate (Hit Rate or Sensitivity value)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<h3 id="results">Results</h3>
+<ul>
+<li><p><span style='color:blue'><strong>out_p</strong></span>: p-value for the <span style='color:blue'>user-defined AUC</span> value and the given P and Q</p>
+</li>
+<li><p><span style='color:#7030A0'><strong>out_F1H1</strong></span>: p-value and AUC for k-ellipse passing from user-define point
+   (<span style='color:#7030A0'>F<sub>1</sub></span>, <span style='color:#7030A0'>H<sub>1</sub></span>)</p>
+</li>
+</ul>
+<ul>
+<li><span style='color:#00B050'><strong>Files_data_ROC</strong></span>: p-value and AUC for <span style='color:#00B050'>user&#39;s ROC data</span> file and given P and Q</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<h3 id="files">Files</h3>
+<p>The output files (and their default names and types) that the user can save are:</p>
+<ul>
+<li><p><strong>out_field.csv</strong>: 3-column .csv file containing: the coordinates of the points in the ROC diagram for which calculation has been made together (cols x &amp; y) and the corresponding p-values (col z)</p>
+</li>
+<li><p><strong>out_CL.csv</strong>:    4-column .csv file containing as first column the F coordinate of the points of all three k-ellipses (10%, 5% and 1%), the H coordinates of which are given in the second, third and fourth column, respectively</p>
+</li>
+<li><p><strong>out_p.csv</strong>:     one line .csv file containing</p>
+<ol>
+<li><p>the p-value for the user-defined Area Under the Curve value (<em>AUC0</em>),</p>
+</li>
+<li><p>the user-defined Area Under the Curve value (<em>AUC0</em>),</p>
+</li>
+<li><p>the user-defined number of positive events <em>P</em>,</p>
+</li>
+<li><p>the user-defined number of negative events <em>Q</em> and</p>
+</li>
+<li><p>an error code <em>i-fault</em> which should be 0, 1 or 2 (see <a href="#faults">&quot;Faults&quot;</a>).</p>
+</li>
+</ol>
+</li>
+<li><p><strong>out_F1H1.csv</strong>: one line .csv file containing:</p>
+<ol>
+<li><p>the p-value of the k-ellipse passing through the point with coordinates (<em>F<sub>1</sub>,H<sub>1</sub></em>),</p>
+</li>
+<li><p>the value of <em>F<sub>1<sub></em>,</p>
+</li>
+<li><p>the value of <em>H<sub>1<sub></em>,</p>
+</li>
+<li><p>the value of <em>i-fault</em></p>
+</li>
+<li><p>the number of positive events <em>P</em>,</p>
+</li>
+<li><p>the number of negative events <em>Q</em> and</p>
+</li>
+<li><p>the <em>AUC</em> of the <em>k-ellipse</em>.</p>
+</li>
+</ol>
+</li>
+<li><p><strong>out_k_F1H1.csv</strong>:  3-column .csv file containing the coordinates of the k-ellipse passing from the point
+(F<sub>1</sub>, H<sub>1</sub>) and the corresponding  value of k</p>
+</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<hr>
+<h2 id="buttons-menus-a-id-buttons-menus-">Buttons / Menus <a id="buttons/menus"></h2>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<h3 id="plot-a-id-plot-">Plot:<a id="plot"></h3>
+<p>Calculate and plot based on the input data</p>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<h3 id="save-a-id-save-">Save:<a id="save"></h3>
+<ul>
+<li><p><strong>Save</strong> file(s) with default name(s)</p>
+</li>
+<li><p><strong>Save as</strong>: save file(s) with name(s) of user&#39;s choice</p>
+</li>
+<li><p><strong>Save all</strong> files (default names) into a unique .zip file</p>
+</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<h3 id="view-a-id-view-">View:<a id="view"></h3>
+<p>There are three plotting options as for the axes True Positive Rate <em>(axis x)</em> and False Positive Rate <em>(axis y)</em>. Respectively:</p>
+<ul>
+<li><strong><em>False-Alarm Rate</em></strong> and <strong><em>Hit Rate</em></strong> view mode,       </li>
+<li><strong><em>1-Specificity</em></strong> and <strong><em>Sensitivity</em></strong> view mode and</li>
+<li><strong><em>False Positive Rate (FPR)</em></strong> and <strong><em>True Positive Rate (TPR)</em></strong> view mode.</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<h3 id="help-a-id-help-">Help:<a id="help"></h3>
+<ul>
+<li><p>Instructions / <strong>Help</strong> to run program VISROC 2.0</p>
+</li>
+<li><p><strong>About</strong> the creators and their research</p>
+</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<hr>
+<h2 id="faults-i-fault-codes-a-id-faults-">Faults (i-fault codes) <a id="faults"></h2>
+<ul>
+<li><strong>No fault</strong> (<strong>i-fault = 0</strong>) <a id="fault0"></li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<ul>
+<li><p><strong>Non-Critical fault</strong> (<strong>i-fault = 1</strong>, <span style="padding: 3px; border: 2px solid crimson">the error message appears within a red rectangle</span>): Some illegal input value(s); <u>plots and calculations were nevertheless executed using altered values instead of the illegal ones</u>. <a id="fault1"></p>
+Possible causes:
+<ul>
+<li><p>User-defined <em>AUC</em> has a numerical value in the interval (0, 0.5), i.e. out of the closed interval [0.5, 1] <em>(use of default value)</em></p>
+</li>
+<li><p><em>F<sub>1</sub></em> or/and <em>H<sub>1</sub></em> have a numerical value out of the closed interval [0, 1] <em>(use of default value)</em></p>
+</li>
+<li><p><em>H<sub>1</sub></em> is smaller than <em>F<sub>1</sub></em> <em>(invert values)</em></p>
+</li>
+<li><p><em>Filepath</em> does not correspond to file <em>(calculate and plot without user&#39;s ROC data input)</em></p>
+</li>
+<li><p><em>File format</em> is not supported <em>(calculate and plot without user&#39;s ROC data input)</em></p>
+</li>
+<li><p><em>Data dimensions</em> are not correct, input data has not 2 cols <em>(calculate and plot without user&#39;s ROC data input)</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p>
+
+<ul>
+<li><p><strong>Critical fault</strong> (<strong>i-fault = 2</strong>, <span style="padding: 4px; background-color: #FF4D4D">the error message appears in red background color</span>): Some illegal input value(s); <u>plotting and calculations are not possible</u>. <a id="fault2"></p>
+Possible causes:
+<ul>
+<li><p>User-defined <em>AUC</em> has a numerical value in the interval below 0 or greater than 1 (<em>AUC</em> can only be in the closed interval [0.5, 1])</p>
+</li>
+<li><p><em>P</em> or/and <em>Q</em> are not positive integers (<em>P</em> and <em>Q</em> can only be positive integers)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="font-size: 8px;color:blue"><a style= "text-decoration: none" href=#toc>Back to Table of Contents</a></p></body></html>
